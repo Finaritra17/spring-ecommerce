@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Shop Homepage - Start Bootstrap Template</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" th:href="@{assets/favicon.ico}" />
+        <!-- Bootstrap icons-->
+        <link th:href="@{/https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css}" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link th:href="@{/css/styles.css}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+		<div th:include="administrador/template_admin.html::header"></div>
+		
+        <!-- Header-->
+        <header class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">Shop in style</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+                </div>
+            </div>
+        </header>
+        <!-- Section-->
+        <section class="py-5">
+        <h2>Crear Producto</h2>
+        <form class="form-horizontal" th:action="@{/productos/save}" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+        	<label class="control-label col-sm-2" for="nombre">Nombre:</label>
+        	<div class="col-sm-10">
+        		<input type="text" class="form-control" id="nombre" name="nombre" 
+        		placeholder="Ingrese el nombre del producto" required autocomplete="off">
+        	</div>
+        </div>
+       <div class="form-group">
+        	<label class="control-label col-sm-2">Descripcon:</label>
+        	<div class="col-sm-10">
+        		<textarea class="form-control" id="descripcion" name="descripcion" 
+        		placeholder="precio" required autocomplete="off"></textarea>
+        	</div>
+        </div>
+        <div class="form-group">
+        	<label class="control-label col-sm-2">Cantidad:</label>
+        	<div class="col-sm-10">
+        		<input type="number" class="form-control" id="cantidad" name="cantidad" 
+        		placeholder="precio" required autocomplete="off">
+        	</div>
+        </div>
+        <div class="form-group">
+        	<label class="control-label col-sm-2">Precio:</label>
+        	<div class="col-sm-10">
+        		<input type="number" class="form-control-file" id="img" name="img">
+        	</div>
+        </div>
+        <div class="form-group">
+        	<label class="control-label col-sm-2">Imagen:</label>
+        	<div class="col-sm-10">
+        		<input type="file" class="form-control-file" id="img" name="img">
+        	</div>
+        </div>
+        <div class="row">
+	        <div class="col-sm-2">
+	        	<button type="submit" class="btn btn-sucess">
+	        		<span class="glyphicon glyphicon-saved"></span>Guardar
+	        	</button>
+	        </div>
+        </div> 
+        
+        </form>
+         
+        </section>
+        <!-- Footer-->
+		<div th:include="administrador/template_admin.html::footer"></div>
+        <!-- Bootstrap core JS-->
+        <script th:src="@{/https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js}"></script>
+        <!-- Core theme JS-->
+        <script th:src="@{/js/scripts.js}"></script>
+    </body>
+</html>
